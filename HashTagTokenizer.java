@@ -39,7 +39,11 @@ public class HashTagTokenizer {
         int N = hashtag.length();
 
         for (int i = 1; i <= N; i++) {
-		
+		boolean isWord = existInDictionary(hashtag.substring(0,i), dictionary);
+		if (isWord) {
+			System.out.println(hashtag.substring(0,i));
+			breakHashTag(hashtag.substring(i+1, N-1), dictionary);
+		}
         }
     }
 
