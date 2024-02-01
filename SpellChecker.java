@@ -28,7 +28,7 @@ public class SpellChecker {
 			return lower2.length();
 		}if (lower2.length()==0) {
 			return lower1.length();
-		}if (lower1.length()==lower2.length()) {
+		}if (lower1.charAt(0)==lower2.charAt(0)) {
 			return levenshtein(tail(lower1), tail(lower2));
 		}else{
 			return 1+Math.min(levenshtein(tail(lower1),tail(lower2)),(Math.min(levenshtein(tail(lower1), lower2), levenshtein(lower1, tail(lower2)))));
