@@ -24,14 +24,20 @@ public class SpellChecker {
 	public static int levenshtein(String word1, String word2) {
 		String lower1 = word1.toLowerCase();
 		String lower2 = word2.toLowerCase();
+		char head1 = lower1.charAt(0);
+		char head2 = lower2.charAt(0);
+
 		if (lower1.length()==0) {
 			return lower2.length();
 		}if (lower2.length()==0) {
 			return lower1.length();
-		}if (lower1.charAt(0)==lower2.charAt(0)) {
+		}if (head1==head2) {
 			return levenshtein(tail(lower1), tail(lower2));
 		}else{
-			return 1+Math.min(levenshtein(tail(lower1),tail(lower2)),(Math.min(levenshtein(tail(lower1), lower2), levenshtein(lower1, tail(lower2)))));
+			return 1+
+			Math.min		(levenshtein(tail(lower1),tail(lower2))
+			,(Math.min		(levenshtein(tail(lower1), lower2)
+					, 		levenshtein(lower1, tail(lower2)))));
 		}
 
 		}
