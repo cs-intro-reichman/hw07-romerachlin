@@ -48,7 +48,7 @@ public class HashTagTokenizer {
 			return;
 			}
 	      }
-		  breakHashTag(lowerCaseHashtag.substring(1), dictionary);
+		// breakHashTag(lowerCaseHashtag.substring(1), dictionary);
 	}
 
 }
