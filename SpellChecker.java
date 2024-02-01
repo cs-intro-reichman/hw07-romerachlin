@@ -28,8 +28,9 @@ public class SpellChecker {
 
 		String lower1 = word1.toLowerCase();
 		String lower2 = word2.toLowerCase();
-		char head1 = 0;
-		char head2 = 1;
+		char head1 = 1;
+		char head2 = 2;
+
 		if (word1.length()!=0) {
 		head1 = lower1.charAt(0);
 		}
