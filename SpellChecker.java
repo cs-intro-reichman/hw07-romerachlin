@@ -78,7 +78,7 @@ public class SpellChecker {
 		String spellChecker = "";
 		for (int i = 0; i < dictionary.length; i++) {
 		if (levenshtein(word, dictionary[i])==min){
-		spellChecker.equals(dictionary[i]);
+		spellChecker = dictionary[i];
 		return spellChecker;
 			}
 		}
