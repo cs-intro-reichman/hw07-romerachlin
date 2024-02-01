@@ -39,7 +39,7 @@ public class SpellChecker {
 			,(Math.min		(levenshtein(tail(lower1), lower2)
 					, 		levenshtein(lower1, tail(lower2)))));
 		}
-
+		
 		}
 
 
@@ -57,7 +57,7 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
-		// Your code goes here
+		return word;
 	}
 
 }
