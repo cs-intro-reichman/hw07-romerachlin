@@ -28,9 +28,15 @@ public class SpellChecker {
 
 		String lower1 = word1.toLowerCase();
 		String lower2 = word2.toLowerCase();
-		char head1 = lower1.charAt(0);
-		char head2 = lower2.charAt(0);
-	
+		char head1 = 0;
+		char head2 = 1;
+		if (word1.length()!=0) {
+		head1 = lower1.charAt(0);
+		}
+		if (word2.length()!=0) {
+		head2 = lower2.charAt(0);
+		}
+
 		if (lower1.length()==0) {
 			return lower2.length();
 		}else if (lower2.length()==0) {
@@ -61,9 +67,13 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
+		int min = threshold;
 		for (int i = 0; i < dictionary.length; i++) {
 			if (levenshtein(word, dictionary[i])<=threshold){
-				int min = levenshtein(word, dictionary[i]);
+				int relevent = levenshtein(word, dictionary[i]);
+				if (relevent<min) {
+					min=relevent;
+				}
 			}
 
 		}
