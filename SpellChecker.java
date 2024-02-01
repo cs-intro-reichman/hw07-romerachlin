@@ -11,20 +11,42 @@ public class SpellChecker {
 	}
 
 	public static String tail(String str) {
-		// Your code goes here
+		if (str.length()==1) {
+			return "";
+
+		}else{
+		String tail = str.substring(1);
+
+		return tail;
 	}
+}
 
 	public static int levenshtein(String word1, String word2) {
-		// Your code goes here
-	}
+		String lower1 = word1.toLowerCase();
+		String lower2 = word2.toLowerCase();
+		if (lower1.length()==0) {
+			return lower2.length();
+		}if (lower2.length()==0) {
+			return lower1.length();
+		}if (lower1.length()==lower2.length()) {
+			return levenshtein(tail(lower1), tail(lower2));
+		}else{
+			return 1+Math.min(levenshtein(tail(lower1),tail(lower2)),(Math.min(levenshtein(tail(lower1), lower2), levenshtein(lower1, tail(lower2)))));
+		}
 
+		}
+
+
+		
 	public static String[] readDictionary(String fileName) {
 		String[] dictionary = new String[3000];
 
 		In in = new In(fileName);
 
-		// Your code here
-
+		for (int i = 0; i < dictionary.length; i++) {
+			dictionary[i] = in.readLine();
+		}
+		
 		return dictionary;
 	}
 
