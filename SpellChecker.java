@@ -11,15 +11,15 @@ public class SpellChecker {
 	}
 
 	public static String tail(String str) {
-		if (str.length()==1) {
-			return "";
+		// if (str.length()==1) {
+		// 	return "";
 
-		}else{
+		// }else{
 		String tail = str.substring(1);
 
 		return tail;
 	}
-}
+// }
 
 	public static int levenshtein(String word1, String word2) {
 		String lower1 = word1.toLowerCase();
@@ -58,7 +58,7 @@ public class SpellChecker {
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
 		for (int i = 0; i < dictionary.length; i++) {
-			levenshtein(word, dictionary[1]);
+			int min = Math.max(levenshtein(word, dictionary[i]),levenshtein(word, dictionary[i+1]));
 
 		}
 		return word;
