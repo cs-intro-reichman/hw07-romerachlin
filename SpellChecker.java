@@ -22,10 +22,7 @@ public class SpellChecker {
 // }
 
 	public static int levenshtein(String word1, String word2) {
-		if (word1.length()==0 && word1.length()==0) {
-			return 0;
-		}
-
+		
 		String lower1 = word1.toLowerCase();
 		String lower2 = word2.toLowerCase();
 		char head1 = 1000;
@@ -78,7 +75,13 @@ public class SpellChecker {
 			}
 
 		}
+		String spellChecker = "";
+		for (int i = 0; i < dictionary.length; i++) {
+		if (levenshtein(word, dictionary[i])==min){
+		spellChecker.equals(dictionary[i]);
+		return spellChecker;
+			}
+		}
 		return word;
-	}
-
+}
 }
