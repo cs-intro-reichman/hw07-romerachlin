@@ -29,9 +29,9 @@ public class SpellChecker {
 
 		if (lower1.length()==0) {
 			return lower2.length();
-		}if (lower2.length()==0) {
+		}else if (lower2.length()==0) {
 			return lower1.length();
-		}if (head1==head2) {
+		}else if (head1==head2) {
 			return levenshtein(tail(lower1), tail(lower2));
 		}else{
 			return 1+
@@ -57,6 +57,10 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
+		for (int i = 0; i < dictionary.length; i++) {
+			levenshtein(word, dictionary[1]);
+
+		}
 		return word;
 	}
 
